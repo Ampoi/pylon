@@ -5,6 +5,7 @@ import json
 import unittest
 
 from pylon_bridge.vessel_model import UrdfChunkAssembler
+from pylon_bridge.application.model_transfer import ModelTransfer
 
 
 SESSION_ID = "a" * 32
@@ -95,6 +96,16 @@ def chunk_packets(urdf=None, chunk_size=40, include_base_pose=True):
 
 
 class UrdfChunkAssemblerTests(unittest.TestCase):
+    def test_runtime_transfer_reassembles_with_receive_clock(self):
+        transfer = ModelTransfer()
+        model = None
+        for packet in chunk_packets():
+            candidate = transfer.consume(packet, now=1.0)
+            if candidate is not None:
+                model = candidate
+        self.assertIsNotNone(model)
+        self.assertEqual(model.vessel_id, VESSEL_ID)
+
     def test_reassembles_out_of_order_proxy_without_disk_state(self):
         assembler = UrdfChunkAssembler()
         packets = chunk_packets()

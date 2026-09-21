@@ -1,0 +1,17 @@
+# Only the production ROS packages and container configuration enter the image.
+**
+!LICENSE
+!Ros2/
+!Ros2/pylon_interfaces/
+!Ros2/pylon_interfaces/**
+!Ros2/pylon_bridge/
+!Ros2/pylon_bridge/**
+!Ros2/pylon_vehicle_control/
+!Ros2/pylon_vehicle_control/**
+!Docker/
+!Docker/spaceros/
+!Docker/spaceros/Dockerfile
+!Docker/spaceros/entrypoint.sh
+**/__pycache__
+**/*.pyc
+**/.pytest_cache

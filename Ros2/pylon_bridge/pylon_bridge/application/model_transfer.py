@@ -14,7 +14,7 @@ class ModelTransfer:
         self._expire_cleared(now)
         if packet.get("sessionId") in self.cleared_sessions:
             return None
-        return self.assembler.consume(packet, now=now)
+        return self.assembler.consume(packet, received_at=now)
 
     def clear(self, packet, now):
         session_id = packet.get("sessionId")

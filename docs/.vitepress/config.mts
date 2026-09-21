@@ -39,6 +39,7 @@ export default defineConfig({
         text: '導入・アプリケーション開発',
         items: [
           { text: 'Getting Started', link: '/guide/getting-started' },
+          { text: 'Space ROSで動かす', link: '/guide/space-ros' },
           { text: 'システム概要', link: '/guide/overview' },
           { text: 'ROS2アプリケーションを作る', link: '/guide/application-development' },
         ]

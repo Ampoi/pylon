@@ -10,6 +10,8 @@ PyLoNは、Kerbal Space Program 1.xのセンサーと機体をROS2から扱う�
 
 導入後は[ROS2アプリケーションを作る](docs/guide/application-development.md)へ進んでください。[システム概要](docs/guide/overview.md)では通信経路、Topicの寿命、IDと座標系を確認できます。
 
+Space ROSを使用する場合は[Space ROSで動かす](docs/guide/space-ros.md)を参照してください。公式イメージ内でPyLoNをビルドし、ホストのKSPと接続できます。
+
 配布版MODは[Releases](https://github.com/Ampoi/KSP_ROS2/releases)の`PyLoN-vX.Y.Z.zip`を展開し、`GameData/PyLoN`をKSPの`GameData`へコピーします。更新前にインストール先の`Config/Runtime.cfg`を控えてください。「Source code」アーカイブにはビルド済みMODは含まれません。ROS2パッケージはソースからビルドします。
 
 ## APIリファレンス
